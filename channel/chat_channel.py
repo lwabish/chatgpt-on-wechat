@@ -149,6 +149,7 @@ class ChatChannel(Channel):
 
                 if skip_reply(content, conf().get("single_chat_keywords", [])):
                     return None
+                logger.info(f"[WX]after filter, content: {content}, conf: {conf().get('single_chat_keywords', [])}")
 
             content = content.strip()
             img_match_prefix = check_prefix(content, conf().get("image_create_prefix"))
